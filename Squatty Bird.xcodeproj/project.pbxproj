@@ -1,0 +1,642 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		530717D22A1B7F09004B203E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530717D02A1B7F09004B203E /* HomeViewController.swift */; };
+		530717D32A1B7F09004B203E /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 530717D12A1B7F09004B203E /* HomeViewController.xib */; };
+		530717D62A1B8676004B203E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530717D42A1B8676004B203E /* MainViewController.swift */; };
+		530717D72A1B8676004B203E /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 530717D52A1B8676004B203E /* MainViewController.xib */; };
+		530717D92A1C591C004B203E /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530717D82A1C591C004B203E /* Globals.swift */; };
+		530717DF2A1CB559004B203E /* 8-bit Arcade Out.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 530717DE2A1CB559004B203E /* 8-bit Arcade Out.ttf */; };
+		530717E22A1CBC67004B203E /* 8-bit Arcade In.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 530717E12A1CBAF0004B203E /* 8-bit Arcade In.ttf */; };
+		530717E42A1F1DF6004B203E /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530717E32A1F1DF6004B203E /* AudioPlayer.swift */; };
+		530717E72A1F2057004B203E /* backgroundMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 530717E62A1F2057004B203E /* backgroundMusic.mp3 */; };
+		530717E92A1F21BB004B203E /* ReadMe in Resources */ = {isa = PBXBuildFile; fileRef = 530717E82A1F21BB004B203E /* ReadMe */; };
+		530717EB2A1F2265004B203E /* score.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 530717EA2A1F2265004B203E /* score.mp3 */; };
+		530717ED2A1F2313004B203E /* thud.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 530717EC2A1F2313004B203E /* thud.mp3 */; };
+		530717EF2A1F342F004B203E /* menuMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 530717EE2A1F342F004B203E /* menuMusic.mp3 */; };
+		53F400FD2A1710CC0050BB25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F400FC2A1710CC0050BB25 /* AppDelegate.swift */; };
+		53F400FF2A1710CC0050BB25 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 53F400FE2A1710CC0050BB25 /* art.scnassets */; };
+		53F401062A1710CD0050BB25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53F401052A1710CD0050BB25 /* Assets.xcassets */; };
+		53F401132A1710CD0050BB25 /* Testing_ARTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F401122A1710CD0050BB25 /* Testing_ARTests.swift */; };
+		53F4011D2A1710CD0050BB25 /* Testing_ARUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F4011C2A1710CD0050BB25 /* Testing_ARUITests.swift */; };
+		53F4011F2A1710CD0050BB25 /* Testing_ARUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F4011E2A1710CD0050BB25 /* Testing_ARUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		53F4010F2A1710CD0050BB25 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 53F400F12A1710CC0050BB25 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 53F400F82A1710CC0050BB25;
+			remoteInfo = "Testing AR";
+		};
+		53F401192A1710CD0050BB25 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 53F400F12A1710CC0050BB25 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 53F400F82A1710CC0050BB25;
+			remoteInfo = "Testing AR";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		530717D02A1B7F09004B203E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		530717D12A1B7F09004B203E /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		530717D42A1B8676004B203E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		530717D52A1B8676004B203E /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		530717D82A1C591C004B203E /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		530717DE2A1CB559004B203E /* 8-bit Arcade Out.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "8-bit Arcade Out.ttf"; sourceTree = "<group>"; };
+		530717E02A1CB584004B203E /* Testing-AR-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Testing-AR-Info.plist"; sourceTree = SOURCE_ROOT; };
+		530717E12A1CBAF0004B203E /* 8-bit Arcade In.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "8-bit Arcade In.ttf"; sourceTree = "<group>"; };
+		530717E32A1F1DF6004B203E /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		530717E62A1F2057004B203E /* backgroundMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backgroundMusic.mp3; sourceTree = "<group>"; };
+		530717E82A1F21BB004B203E /* ReadMe */ = {isa = PBXFileReference; lastKnownFileType = text; path = ReadMe; sourceTree = "<group>"; };
+		530717EA2A1F2265004B203E /* score.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = score.mp3; sourceTree = "<group>"; };
+		530717EC2A1F2313004B203E /* thud.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = thud.mp3; sourceTree = "<group>"; };
+		530717EE2A1F342F004B203E /* menuMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = menuMusic.mp3; sourceTree = "<group>"; };
+		53F400F92A1710CC0050BB25 /* Squatty Bird.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Squatty Bird.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		53F400FC2A1710CC0050BB25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		53F400FE2A1710CC0050BB25 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
+		53F401052A1710CD0050BB25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		53F4010E2A1710CD0050BB25 /* Squatty BirdTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Squatty BirdTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		53F401122A1710CD0050BB25 /* Testing_ARTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Testing_ARTests.swift; sourceTree = "<group>"; };
+		53F401182A1710CD0050BB25 /* Squatty BirdUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Squatty BirdUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		53F4011C2A1710CD0050BB25 /* Testing_ARUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Testing_ARUITests.swift; sourceTree = "<group>"; };
+		53F4011E2A1710CD0050BB25 /* Testing_ARUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Testing_ARUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		53F400F62A1710CC0050BB25 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53F4010B2A1710CD0050BB25 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53F401152A1710CD0050BB25 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		530717E52A1F203F004B203E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				530717EE2A1F342F004B203E /* menuMusic.mp3 */,
+				530717EC2A1F2313004B203E /* thud.mp3 */,
+				530717EA2A1F2265004B203E /* score.mp3 */,
+				530717E62A1F2057004B203E /* backgroundMusic.mp3 */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		53F400F02A1710CC0050BB25 = {
+			isa = PBXGroup;
+			children = (
+				53F400FB2A1710CC0050BB25 /* Squatty Bird */,
+				53F401112A1710CD0050BB25 /* Testing ARTests */,
+				53F4011B2A1710CD0050BB25 /* Testing ARUITests */,
+				53F400FA2A1710CC0050BB25 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		53F400FA2A1710CC0050BB25 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				53F400F92A1710CC0050BB25 /* Squatty Bird.app */,
+				53F4010E2A1710CD0050BB25 /* Squatty BirdTests.xctest */,
+				53F401182A1710CD0050BB25 /* Squatty BirdUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		53F400FB2A1710CC0050BB25 /* Squatty Bird */ = {
+			isa = PBXGroup;
+			children = (
+				530717E02A1CB584004B203E /* Testing-AR-Info.plist */,
+				530717D52A1B8676004B203E /* MainViewController.xib */,
+				530717D42A1B8676004B203E /* MainViewController.swift */,
+				53F400FC2A1710CC0050BB25 /* AppDelegate.swift */,
+				530717DE2A1CB559004B203E /* 8-bit Arcade Out.ttf */,
+				530717E12A1CBAF0004B203E /* 8-bit Arcade In.ttf */,
+				53F400FE2A1710CC0050BB25 /* art.scnassets */,
+				53F401052A1710CD0050BB25 /* Assets.xcassets */,
+				530717E32A1F1DF6004B203E /* AudioPlayer.swift */,
+				530717D02A1B7F09004B203E /* HomeViewController.swift */,
+				530717D82A1C591C004B203E /* Globals.swift */,
+				530717E82A1F21BB004B203E /* ReadMe */,
+				530717E52A1F203F004B203E /* Resources */,
+				530717D12A1B7F09004B203E /* HomeViewController.xib */,
+			);
+			path = "Squatty Bird";
+			sourceTree = "<group>";
+		};
+		53F401112A1710CD0050BB25 /* Testing ARTests */ = {
+			isa = PBXGroup;
+			children = (
+				53F401122A1710CD0050BB25 /* Testing_ARTests.swift */,
+			);
+			path = "Testing ARTests";
+			sourceTree = "<group>";
+		};
+		53F4011B2A1710CD0050BB25 /* Testing ARUITests */ = {
+			isa = PBXGroup;
+			children = (
+				53F4011C2A1710CD0050BB25 /* Testing_ARUITests.swift */,
+				53F4011E2A1710CD0050BB25 /* Testing_ARUITestsLaunchTests.swift */,
+			);
+			path = "Testing ARUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		53F400F82A1710CC0050BB25 /* Squatty Bird */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53F401222A1710CD0050BB25 /* Build configuration list for PBXNativeTarget "Squatty Bird" */;
+			buildPhases = (
+				53F400F52A1710CC0050BB25 /* Sources */,
+				53F400F62A1710CC0050BB25 /* Frameworks */,
+				53F400F72A1710CC0050BB25 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Squatty Bird";
+			productName = "Testing AR";
+			productReference = 53F400F92A1710CC0050BB25 /* Squatty Bird.app */;
+			productType = "com.apple.product-type.application";
+		};
+		53F4010D2A1710CD0050BB25 /* Squatty BirdTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53F401252A1710CD0050BB25 /* Build configuration list for PBXNativeTarget "Squatty BirdTests" */;
+			buildPhases = (
+				53F4010A2A1710CD0050BB25 /* Sources */,
+				53F4010B2A1710CD0050BB25 /* Frameworks */,
+				53F4010C2A1710CD0050BB25 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				53F401102A1710CD0050BB25 /* PBXTargetDependency */,
+			);
+			name = "Squatty BirdTests";
+			productName = "Testing ARTests";
+			productReference = 53F4010E2A1710CD0050BB25 /* Squatty BirdTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		53F401172A1710CD0050BB25 /* Squatty BirdUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53F401282A1710CD0050BB25 /* Build configuration list for PBXNativeTarget "Squatty BirdUITests" */;
+			buildPhases = (
+				53F401142A1710CD0050BB25 /* Sources */,
+				53F401152A1710CD0050BB25 /* Frameworks */,
+				53F401162A1710CD0050BB25 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				53F4011A2A1710CD0050BB25 /* PBXTargetDependency */,
+			);
+			name = "Squatty BirdUITests";
+			productName = "Testing ARUITests";
+			productReference = 53F401182A1710CD0050BB25 /* Squatty BirdUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		53F400F12A1710CC0050BB25 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					53F400F82A1710CC0050BB25 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					53F4010D2A1710CD0050BB25 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 53F400F82A1710CC0050BB25;
+					};
+					53F401172A1710CD0050BB25 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 53F400F82A1710CC0050BB25;
+					};
+				};
+			};
+			buildConfigurationList = 53F400F42A1710CC0050BB25 /* Build configuration list for PBXProject "Squatty Bird" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 53F400F02A1710CC0050BB25;
+			productRefGroup = 53F400FA2A1710CC0050BB25 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				53F400F82A1710CC0050BB25 /* Squatty Bird */,
+				53F4010D2A1710CD0050BB25 /* Squatty BirdTests */,
+				53F401172A1710CD0050BB25 /* Squatty BirdUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		53F400F72A1710CC0050BB25 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				530717EF2A1F342F004B203E /* menuMusic.mp3 in Resources */,
+				53F400FF2A1710CC0050BB25 /* art.scnassets in Resources */,
+				530717ED2A1F2313004B203E /* thud.mp3 in Resources */,
+				530717EB2A1F2265004B203E /* score.mp3 in Resources */,
+				530717E72A1F2057004B203E /* backgroundMusic.mp3 in Resources */,
+				530717DF2A1CB559004B203E /* 8-bit Arcade Out.ttf in Resources */,
+				530717D32A1B7F09004B203E /* HomeViewController.xib in Resources */,
+				530717E92A1F21BB004B203E /* ReadMe in Resources */,
+				53F401062A1710CD0050BB25 /* Assets.xcassets in Resources */,
+				530717E22A1CBC67004B203E /* 8-bit Arcade In.ttf in Resources */,
+				530717D72A1B8676004B203E /* MainViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53F4010C2A1710CD0050BB25 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53F401162A1710CD0050BB25 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		53F400F52A1710CC0050BB25 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				530717D92A1C591C004B203E /* Globals.swift in Sources */,
+				53F400FD2A1710CC0050BB25 /* AppDelegate.swift in Sources */,
+				530717E42A1F1DF6004B203E /* AudioPlayer.swift in Sources */,
+				530717D22A1B7F09004B203E /* HomeViewController.swift in Sources */,
+				530717D62A1B8676004B203E /* MainViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53F4010A2A1710CD0050BB25 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53F401132A1710CD0050BB25 /* Testing_ARTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53F401142A1710CD0050BB25 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53F4011F2A1710CD0050BB25 /* Testing_ARUITestsLaunchTests.swift in Sources */,
+				53F4011D2A1710CD0050BB25 /* Testing_ARUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		53F401102A1710CD0050BB25 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 53F400F82A1710CC0050BB25 /* Squatty Bird */;
+			targetProxy = 53F4010F2A1710CD0050BB25 /* PBXContainerItemProxy */;
+		};
+		53F4011A2A1710CD0050BB25 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 53F400F82A1710CC0050BB25 /* Squatty Bird */;
+			targetProxy = 53F401192A1710CD0050BB25 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		53F401202A1710CD0050BB25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		53F401212A1710CD0050BB25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		53F401232A1710CD0050BB25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RV753K5W6M;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Testing-AR-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Squatty Bird";
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = HomeViewController.xib;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "everyone.Testing-AR";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		53F401242A1710CD0050BB25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RV753K5W6M;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Testing-AR-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Squatty Bird";
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = HomeViewController.xib;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "everyone.Testing-AR";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		53F401262A1710CD0050BB25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RV753K5W6M;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "everyone.Testing-ARTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Squatty Bird.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Squatty Bird";
+			};
+			name = Debug;
+		};
+		53F401272A1710CD0050BB25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RV753K5W6M;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "everyone.Testing-ARTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Squatty Bird.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Squatty Bird";
+			};
+			name = Release;
+		};
+		53F401292A1710CD0050BB25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RV753K5W6M;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "everyone.Testing-ARUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Testing AR";
+			};
+			name = Debug;
+		};
+		53F4012A2A1710CD0050BB25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RV753K5W6M;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "everyone.Testing-ARUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Testing AR";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		53F400F42A1710CC0050BB25 /* Build configuration list for PBXProject "Squatty Bird" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53F401202A1710CD0050BB25 /* Debug */,
+				53F401212A1710CD0050BB25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		53F401222A1710CD0050BB25 /* Build configuration list for PBXNativeTarget "Squatty Bird" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53F401232A1710CD0050BB25 /* Debug */,
+				53F401242A1710CD0050BB25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		53F401252A1710CD0050BB25 /* Build configuration list for PBXNativeTarget "Squatty BirdTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53F401262A1710CD0050BB25 /* Debug */,
+				53F401272A1710CD0050BB25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		53F401282A1710CD0050BB25 /* Build configuration list for PBXNativeTarget "Squatty BirdUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53F401292A1710CD0050BB25 /* Debug */,
+				53F4012A2A1710CD0050BB25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 53F400F12A1710CC0050BB25 /* Project object */;
+}
