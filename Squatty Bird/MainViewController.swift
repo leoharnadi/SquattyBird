@@ -16,6 +16,8 @@ class MainViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContact
     @IBOutlet weak var scoreUIBackground: UILabel!
     @IBOutlet weak var tutorialImage: UIImageView!
     @IBOutlet weak var tutorialMessage: UILabel!
+    @IBOutlet weak var crosshairImage: UIImageView!
+    @IBOutlet weak var angleMessage: UILabel!
     
     weak var delegate: MainViewControllerDelegate?
     
@@ -32,8 +34,11 @@ class MainViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContact
     var scoreTimer: Timer?
     
     var tutorialClicked: Bool = false
+    var checkForAngle: Bool = false
     
     var isLose: Bool!
+    
+    var cameraRotation: SCNVector3?
     
     var scoreLocal: Int = 0 {
         didSet {
@@ -84,6 +89,7 @@ class MainViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContact
         scoreUIBackground.attributedText = NSAttributedString(string: "0", attributes: [.strokeWidth: 0, .strokeColor: UIColor.white])
         scoreUI.isHidden = true
         scoreUIBackground.isHidden = true
+        crosshairImage.isHidden = true
         
         
         // Scene Physics
@@ -94,9 +100,14 @@ class MainViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContact
         // tutorial overlay
         overlayView = UIView(frame: view.bounds)
         overlayView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
-        tutorialMessage.text = "Squat up and down\nwhile holding your phone.\n\n\n\nTap the screen\n to continue."
+        tutorialMessage.text = "Squat up and down\nwhile holding your phone\n- Or just move the\n phone vertically -\nto dodge the incoming pipes\n\n\n\nTap the screen\n to continue."
         tutorialMessage.font = UIFont(name: foregroundFont, size: 30)
         tutorialMessage.textColor = UIColor.white
+        
+        angleMessage.isHidden = true
+        angleMessage.text = "Move your phone around to see the incoming pipes"
+        angleMessage.font = UIFont(name: foregroundFont, size: 30)
+        angleMessage.textColor = UIColor.white
         
         view.addSubview(overlayView)
         view.bringSubviewToFront(overlayView)
@@ -165,7 +176,6 @@ class MainViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContact
                                         cameraTransform.columns.3.y,
                                         cameraTransform.columns.3.z)
         
-        
         collisionNode.position = SCNVector3(cameraPosition.x, cameraPosition.y, cameraPosition.z)
         
         if tutorialClicked {
@@ -175,6 +185,19 @@ class MainViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContact
             moveAction(node: upperHeadNode, cameraPos: cameraPosition)
             moveAction(node: lowerHeadNode, cameraPos: cameraPosition)
         }
+        
+        let cameraRotation = SCNVector3(-cameraTransform.columns.2.x,
+                                            -cameraTransform.columns.2.y,
+                                            -cameraTransform.columns.2.z)
+        self.cameraRotation = cameraRotation
+        
+        if tutorialClicked && checkForAngle{
+            if !(self.cameraRotation!.x > 0.5 || self.cameraRotation!.x < -0.5) {
+                checkForAngle = false
+                correctAngle()
+            }
+        }
+        
     }
     
     func moveAction(node: SCNNode, cameraPos: SCNVector3) {
@@ -278,7 +301,7 @@ class MainViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContact
 
         frontBorderHeadNode.position.z = Float(headLength / 2) - 0.01
         frontBorderHeadNode2.position.z = Float(headLength / 2) - 0.01
-        
+
         
         // Create upper object
         let upperObject = SCNBox(width: wallWidth, height: CGFloat(wallHeight), length: wallLength, chamferRadius: 0)
@@ -346,7 +369,6 @@ class MainViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContact
         var gapHeightRange: ClosedRange<Float> = 0.3...0.5
         var verticalOffsetRange: ClosedRange<Float> = -0.25...0.25
         
-        
         spawnTimer = Timer.scheduledTimer(withTimeInterval: timerInterval, repeats: true) { [weak self] timer in
             let verticalOffset = Float.random(in: verticalOffsetRange)
             
@@ -372,18 +394,26 @@ class MainViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContact
             if verticalOffsetRange.lowerBound >= -0.35 {
                 verticalOffsetRange = (verticalOffsetRange.lowerBound - 0.05)...(verticalOffsetRange.upperBound + 0.05)
             }
+            
         }
     }
     
     @objc func handleTap(_ gesture: UITapGestureRecognizer) {
-        overlayView.removeFromSuperview()
-        
-        scoreUI.isHidden = false
-        scoreUIBackground.isHidden = false
         tutorialImage.isHidden = true
         tutorialMessage.isHidden = true
+//        crosshairImage.isHidden = false
+        angleMessage.isHidden = false
+        
+//        view.bringSubviewToFront(crosshairImage)
+       
         
         //spawn first object
+        view.bringSubviewToFront(scoreUI)
+        view.bringSubviewToFront(scoreUIBackground)
+        view.bringSubviewToFront(overlayView)
+        view.bringSubviewToFront(angleMessage)
+        
+        
         spawnObjects(gapHeight: 0.3, verticalOffset: 0)
         
         tutorialClicked = true
@@ -392,10 +422,18 @@ class MainViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContact
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.startSpawningObjects()
+            self.checkForAngle = true
         }
     }
     
-    
+    func correctAngle() {
+        DispatchQueue.main.async() {
+            self.overlayView.removeFromSuperview()
+            self.scoreUI.isHidden = false
+            self.scoreUIBackground.isHidden = false
+            self.angleMessage.isHidden = true
+        }
+    }
     
 }
 
