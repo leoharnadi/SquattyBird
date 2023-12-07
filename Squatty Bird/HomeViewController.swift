@@ -17,6 +17,7 @@ class HomeViewController: UIViewController, MainViewControllerDelegate {
     @IBOutlet weak var highScoreLabel: UILabel!
     @IBOutlet weak var titleBackground: UILabel!
     @IBOutlet weak var titleFront: UILabel!
+    @IBOutlet weak var birdSprite: UIImageView!
     
     var titleText: String = "Squatty \nBird"
     
@@ -37,15 +38,9 @@ class HomeViewController: UIViewController, MainViewControllerDelegate {
         scoreLabel.text = ""
         highScoreTitle.text = "High Score"
         highScoreLabel.text = String(highScore)
-        scoreTitle.font = UIFont(name: foregroundFont, size: 30)
-        scoreLabel.font = UIFont(name: foregroundFont, size: 40)
-        highScoreTitle.font = UIFont(name: foregroundFont, size: 30)
-        highScoreLabel.font = UIFont(name: foregroundFont, size: 40)
         
-        titleBackground.font = UIFont(name: backgroundFont, size: 75)
         titleBackground.text = titleText
         titleBackground.textColor = UIColor(named: "darkGreen")
-        titleFront.font = UIFont(name: foregroundFont, size: 75)
         titleFront.text = titleText
         titleFront.textColor = UIColor(named: "lightGreen")
         
@@ -60,6 +55,55 @@ class HomeViewController: UIViewController, MainViewControllerDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(appWillEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
         
         audioPlayer.playMenu()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        let viewHeight = view.frame.height
+        let viewWidth = view.frame.height
+        let viewTopAnchor = view.topAnchor
+        let viewBottomAnchor = view.bottomAnchor
+        let viewCenterXAnchor = view.centerXAnchor
+        
+        scoreTitle.font = UIFont(name: foregroundFont, size: 30 * (viewHeight/844))
+        scoreLabel.font = UIFont(name: foregroundFont, size: 40 * (viewHeight/844))
+        highScoreTitle.font = UIFont(name: foregroundFont, size: 30 * (viewHeight/844))
+        highScoreLabel.font = UIFont(name: foregroundFont, size: 40 * (viewHeight/844))
+        
+        titleBackground.font = UIFont(name: backgroundFont, size: 75 * (viewHeight/844))
+        titleFront.font = UIFont(name: foregroundFont, size: 75 * (viewHeight/844))
+        
+        startButton.translatesAutoresizingMaskIntoConstraints = false
+        titleBackground.translatesAutoresizingMaskIntoConstraints = false
+        titleFront.translatesAutoresizingMaskIntoConstraints = false
+        scoreTitle.translatesAutoresizingMaskIntoConstraints = false
+        scoreLabel.translatesAutoresizingMaskIntoConstraints = false
+        highScoreTitle.translatesAutoresizingMaskIntoConstraints = false
+        highScoreLabel.translatesAutoresizingMaskIntoConstraints = false
+        birdSprite.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([startButton.bottomAnchor.constraint(equalTo: viewBottomAnchor, constant: -0.05 * viewHeight),
+                                     startButton.centerXAnchor.constraint(equalTo: viewCenterXAnchor), startButton.widthAnchor.constraint(equalToConstant: 0.46 * viewWidth), startButton.heightAnchor.constraint(equalToConstant: 0.22 * viewHeight),
+                                     
+                                     titleBackground.topAnchor.constraint(equalTo: viewTopAnchor, constant: 0.108 * viewHeight),
+                                     titleBackground.centerXAnchor.constraint(equalTo: viewCenterXAnchor), titleBackground.widthAnchor.constraint(equalToConstant: viewWidth),titleBackground.heightAnchor.constraint(equalToConstant: 0.12 * viewHeight),
+                                     
+                                     titleFront.topAnchor.constraint(equalTo: viewTopAnchor, constant: 0.108 * viewHeight),
+                                     titleFront.centerXAnchor.constraint(equalTo: viewCenterXAnchor), titleFront.widthAnchor.constraint(equalToConstant: viewWidth),titleFront.heightAnchor.constraint(equalToConstant: 0.12 * viewHeight),
+                                     
+                                     highScoreTitle.topAnchor.constraint(equalTo: viewTopAnchor, constant: 0.236 * viewHeight), highScoreTitle.centerXAnchor.constraint(equalTo: viewCenterXAnchor), highScoreTitle.widthAnchor.constraint(equalToConstant: 0.641 * viewWidth), highScoreTitle.heightAnchor.constraint(equalToConstant: 0.06 * viewHeight),
+                                     
+                                     highScoreLabel.topAnchor.constraint(equalTo: viewTopAnchor, constant: 0.271 * viewHeight), highScoreLabel.centerXAnchor.constraint(equalTo: viewCenterXAnchor), highScoreLabel.widthAnchor.constraint(equalToConstant: 0.384 * viewWidth), highScoreLabel.heightAnchor.constraint(equalToConstant: 0.047 * viewHeight),
+                                     
+                                     scoreTitle.topAnchor.constraint(equalTo: viewTopAnchor, constant: 0.319 * viewHeight), scoreTitle.centerXAnchor.constraint(equalTo: viewCenterXAnchor), scoreTitle.widthAnchor.constraint(equalToConstant: 0.384 * viewWidth), scoreTitle.heightAnchor.constraint(equalToConstant: 0.047 * viewHeight),
+                                     
+                                     scoreLabel.topAnchor.constraint(equalTo: viewTopAnchor, constant: 0.354 * viewHeight), scoreLabel.centerXAnchor.constraint(equalTo: viewCenterXAnchor), scoreLabel.widthAnchor.constraint(equalToConstant: 0.384 * viewWidth), scoreLabel.heightAnchor.constraint(equalToConstant: 0.047 * viewHeight),
+                                     
+                                     birdSprite.topAnchor.constraint(equalTo: viewTopAnchor, constant: 0.436 * viewHeight), birdSprite.centerXAnchor.constraint(equalTo: viewCenterXAnchor), birdSprite.widthAnchor.constraint(equalToConstant: 0.615 * viewWidth), birdSprite.heightAnchor.constraint(equalToConstant: 0.296 * viewHeight),
+                                    ])
+        //        print(startButton.frame)
+        //        view.layoutIfNeeded()
     }
     
     @IBAction func startButtonDidPressed(_ sender: Any) {

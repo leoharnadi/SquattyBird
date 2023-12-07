@@ -82,13 +82,11 @@ class MainViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContact
         scene.rootNode.addChildNode(collisionNode)
         
         // Score UI
-        scoreUI.font = UIFont(name: foregroundFont, size: 75)
         scoreUI.attributedText = NSAttributedString(string: "0", attributes: [.strokeWidth: 0, .strokeColor: UIColor.white])
-        scoreUIBackground.font = UIFont(name: backgroundFont, size: 75)
         scoreUIBackground.textColor = UIColor.white
         scoreUIBackground.attributedText = NSAttributedString(string: "0", attributes: [.strokeWidth: 0, .strokeColor: UIColor.white])
-        scoreUI.isHidden = true
-        scoreUIBackground.isHidden = true
+//        scoreUI.isHidden = true
+//        scoreUIBackground.isHidden = true
         crosshairImage.isHidden = true
         
         
@@ -101,24 +99,67 @@ class MainViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContact
         overlayView = UIView(frame: view.bounds)
         overlayView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         tutorialMessage.text = "Squat up and down\nwhile holding your phone\n- Or just move the\n phone vertically -\nto dodge the incoming pipes\n\n\n\nTap the screen\n to continue."
-        tutorialMessage.font = UIFont(name: foregroundFont, size: 30)
         tutorialMessage.textColor = UIColor.white
         
         angleMessage.isHidden = true
-        angleMessage.text = "Move your phone around to see the incoming pipes"
-        angleMessage.font = UIFont(name: foregroundFont, size: 30)
+        angleMessage.text = "Move your phone around\n to see the incoming pipes"
         angleMessage.textColor = UIColor.white
         
         view.addSubview(overlayView)
         view.bringSubviewToFront(overlayView)
         view.bringSubviewToFront(tutorialImage)
         view.bringSubviewToFront(tutorialMessage)
+        view.bringSubviewToFront(scoreUI)
+        view.bringSubviewToFront(scoreUIBackground)
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         overlayView.addGestureRecognizer(tapGesture)
         
         // for sound
         isLose = false
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        let viewHeight = view.frame.height
+        let viewWidth = view.frame.height
+        let viewTopAnchor = view.topAnchor
+        let viewBottomAnchor = view.bottomAnchor
+        let viewCenterXAnchor = view.centerXAnchor
+
+        scoreUI.font = UIFont(name: foregroundFont, size: 75 * (viewHeight/844))
+        scoreUIBackground.font = UIFont(name: backgroundFont, size: 75 * (viewHeight/844))
+        tutorialMessage.font = UIFont(name: foregroundFont, size: 30 * (viewHeight/844))
+        angleMessage.font = UIFont(name: foregroundFont, size: 30 * (viewHeight/844))
+        
+        scoreUI.translatesAutoresizingMaskIntoConstraints = false
+        scoreUIBackground.translatesAutoresizingMaskIntoConstraints = false
+        tutorialMessage.translatesAutoresizingMaskIntoConstraints = false
+        angleMessage.translatesAutoresizingMaskIntoConstraints = false
+        crosshairImage.translatesAutoresizingMaskIntoConstraints = false
+        tutorialImage.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            scoreUI.topAnchor.constraint(equalTo: viewTopAnchor, constant: 0.095 * viewHeight),
+            scoreUI.centerXAnchor.constraint(equalTo: viewCenterXAnchor), scoreUI.widthAnchor.constraint(equalToConstant: 0.23 * viewWidth), scoreUI.heightAnchor.constraint(equalToConstant: 0.08 * viewHeight),
+            
+            scoreUIBackground.topAnchor.constraint(equalTo: viewTopAnchor, constant: 0.095 * viewHeight),
+            scoreUIBackground.centerXAnchor.constraint(equalTo: viewCenterXAnchor), scoreUIBackground.widthAnchor.constraint(equalToConstant: 0.23 * viewWidth), scoreUIBackground.heightAnchor.constraint(equalToConstant: 0.08 * viewHeight),
+            
+            tutorialMessage.topAnchor.constraint(equalTo: viewTopAnchor, constant: 0.355 * viewHeight),
+            tutorialMessage.centerXAnchor.constraint(equalTo: viewCenterXAnchor), tutorialMessage.widthAnchor.constraint(equalToConstant: 0.5 * viewWidth), tutorialMessage.heightAnchor.constraint(equalToConstant: 0.59 * viewHeight),
+            
+            angleMessage.topAnchor.constraint(equalTo: viewTopAnchor, constant: 0.209 * viewHeight),
+            angleMessage.centerXAnchor.constraint(equalTo: viewCenterXAnchor), angleMessage.widthAnchor.constraint(equalToConstant: 0.5 * viewWidth), angleMessage.heightAnchor.constraint(equalToConstant: 0.59 * viewHeight),
+            
+            crosshairImage.topAnchor.constraint(equalTo: viewTopAnchor, constant: 0.4668 * viewHeight),
+            crosshairImage.centerXAnchor.constraint(equalTo: viewCenterXAnchor), crosshairImage.widthAnchor.constraint(equalToConstant: 0.307 * viewWidth), crosshairImage.heightAnchor.constraint(equalToConstant: 0.076 * viewHeight),
+            
+            tutorialImage.topAnchor.constraint(equalTo: viewTopAnchor, constant: 0.2 * viewHeight),
+            tutorialImage.centerXAnchor.constraint(equalTo: viewCenterXAnchor), tutorialImage.widthAnchor.constraint(equalToConstant: 0.41 * viewWidth), tutorialImage.heightAnchor.constraint(equalToConstant: 0.35 * viewHeight),
+        ])
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
